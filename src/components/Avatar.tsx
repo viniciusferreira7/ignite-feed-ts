@@ -2,7 +2,12 @@ import React from 'react'
 
 import styles from './Avatar.module.css'
 
-export function Avatar({src, hasBorder = true}) {
+interface AvatarProps {
+  src: string
+  hasBorder?: boolean
+}
+
+export function Avatar({src, hasBorder = true}: AvatarProps) {
 
   return (
     <img className={hasBorder ? styles.avatarWithBorder : styles.avatar} 

@@ -5,7 +5,13 @@ import { Trash, ThumbsUp } from 'phosphor-react'
 import styles from './Comment.module.css'
 import { Avatar } from './Avatar'
 
-export function Comment({ avatarUrl, content, onDeleteComment}) {
+interface CommentProps {
+  avatarUrl: string,
+  content:string,
+  onDeleteComment: (comment: string) => void;
+}
+
+export function Comment({ avatarUrl, content, onDeleteComment}: CommentProps) {
 
   const [ likeCount, setLikeCount ] = useState(0)
 
